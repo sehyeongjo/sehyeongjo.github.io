@@ -5,7 +5,7 @@
       class="spinner container"
     >
       <div class="has-text-centered is-padding-8">
-        <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+        Loading...
       </div>
     </div>
     <index
