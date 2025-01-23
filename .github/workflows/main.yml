@@ -3,7 +3,7 @@ name: github pages deploy
 on:
   push:
     branches:
-    - master
+      - master
 
 jobs:
   build-deploy:
@@ -11,24 +11,21 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    # - uses: actions/checkout@v1
-    
+
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14' # Update Node.js version to 14 or higher
+        node-version: '16' # Node.js 버전을 16으로 업데이트 (더 안정적임)
 
     - name: Install dependencies
-      run: yarn install
+      run: |
+        yarn install
+        npx browserslist@latest --update-db        
 
     - name: Build
-      run: yarn build
-    # - uses: borales/actions-yarn@v2.0.0
-    #   with:
-    #     cmd: install # will run `yarn install` command
-    # - uses: borales/actions-yarn@v2.0.0
-    #   with:
-    #     cmd: build # will run `yarn build` command
+      run: |
+        yarn build
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
