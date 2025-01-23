@@ -9,13 +9,26 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: borales/actions-yarn@v2.0.0
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    # - uses: actions/checkout@v1
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        cmd: install # will run `yarn install` command
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: build # will run `yarn build` command
+        node-version: '14' # Update Node.js version to 14 or higher
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build
+      run: yarn build
+    # - uses: borales/actions-yarn@v2.0.0
+    #   with:
+    #     cmd: install # will run `yarn install` command
+    # - uses: borales/actions-yarn@v2.0.0
+    #   with:
+    #     cmd: build # will run `yarn build` command
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
