@@ -35,8 +35,7 @@
           </a>
         </div>
       </div>
-    </div>
-    <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=yRJr1FK-fHGUvOqQ2I-FZKH_T1mGjBZeSF_l_kcUNX8&cl=ffffff&w=a"></script>
+    </div>    
   </div>
   
 </template>
@@ -56,6 +55,13 @@ export default {
     VueMarkdown,
     NavColumn,
     Publications,
+  },
+  mounted() {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.id = "mapmyvisitors";
+    script.src = "//mapmyvisitors.com/map.js?d=yRJr1FK-fHGUvOqQ2I-FZKH_T1mGjBZeSF_l_kcUNX8&cl=ffffff&w=a";
+    document.body.appendChild(script);
   },
   data() {
     return {};
