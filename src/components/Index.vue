@@ -62,6 +62,10 @@ export default {
     script.id = "mapmyvisitors";
     script.src = "//mapmyvisitors.com/map.js?d=yRJr1FK-fHGUvOqQ2I-FZKH_T1mGjBZeSF_l_kcUNX8&cl=ffffff&w=a";
     document.body.appendChild(script);
+
+    const style = document.createElement("style");
+    style.innerHTML = `#mapmyvisitors { display: none !important; }`;
+    document.head.appendChild(style);
   },
   data() {
     return {};
@@ -74,10 +78,6 @@ export default {
 <style lang="scss" scoped>
   $container-width: 960px; 
   $mobile-breakpoint: 750px;
-
-  :deep(#mapmyvisitors-widget) {
-    display: none;
-  }
 
   .header-column-container {
     position: fixed;
