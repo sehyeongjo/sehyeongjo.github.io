@@ -75,7 +75,7 @@ export default {
   $container-width: 960px; 
   $mobile-breakpoint: 750px;
 
-  #mapmyvisitors-widget {
+  :deep(#mapmyvisitors-widget) {
     display: none;
   }
 
