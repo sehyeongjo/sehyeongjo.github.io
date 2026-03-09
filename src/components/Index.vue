@@ -75,6 +75,10 @@ export default {
   $container-width: 960px; 
   $mobile-breakpoint: 750px;
 
+  #mapmyvisitors-widget {
+    display: none;
+  }
+
   .header-column-container {
     position: fixed;
     width: 100vw;
