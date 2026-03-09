@@ -64,7 +64,7 @@ export default {
     document.body.appendChild(script);
 
     const style = document.createElement("style");
-    style.innerHTML = `#mapmyvisitors { display: none !important; }`;
+    style.innerHTML = `#mapmyvisitors-widget { display: none !important; }`;
     document.head.appendChild(style);
   },
   data() {
