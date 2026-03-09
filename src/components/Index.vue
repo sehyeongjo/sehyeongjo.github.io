@@ -36,8 +36,9 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=yRJr1FK-fHGUvOqQ2I-FZKH_T1mGjBZeSF_l_kcUNX8&cl=ffffff&w=a"></script>
   </div>
-  <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=yRJr1FK-fHGUvOqQ2I-FZKH_T1mGjBZeSF_l_kcUNX8&cl=ffffff&w=a"></script>
+  
 </template>
 
 <script>
