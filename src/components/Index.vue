@@ -56,17 +56,6 @@ export default {
     NavColumn,
     Publications,
   },
-  mounted() {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.id = "mapmyvisitors";
-    script.src = "//mapmyvisitors.com/map.js?d=yRJr1FK-fHGUvOqQ2I-FZKH_T1mGjBZeSF_l_kcUNX8&cl=ffffff&w=a";
-    document.body.appendChild(script);
-
-    const style = document.createElement("style");
-    style.innerHTML = `#mapmyvisitors-widget { display: none !important; }`;
-    document.head.appendChild(style);
-  },
   data() {
     return {};
   },
