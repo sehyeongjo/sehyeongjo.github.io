@@ -20,8 +20,9 @@ jobs:
     - name: Install dependencies
       run: |
         npm uninstall node-sass
-        npm install sass
-        yarn install
+        # shortcut: sass >=1.100 and newer transitive deps need Node >=18; upgrade Node (+ webpack 4 OpenSSL flag) to drop these
+        npm install sass@1.99.0
+        yarn install --ignore-engines
         npx browserslist@latest --update-db
 
     - name: Build
