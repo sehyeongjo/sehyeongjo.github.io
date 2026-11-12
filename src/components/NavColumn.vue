@@ -32,8 +32,8 @@ export default {
     display: block;
     border-radius: 50%;
     margin: 3rem auto;
-    width: 40%;
-    max-width: 180px;
+    width: 70%;
+    max-width: 250px;
     height: auto;
   }
 </style>
