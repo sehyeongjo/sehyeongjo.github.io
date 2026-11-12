@@ -47,7 +47,7 @@ function convertTableContent(content) {
 export async function getData() {
   const contents = await Promise.all([
     getSheetContent('Index', 'A3:C'), 
-    getSheetContent('Publications', 'A2:E'),
+    getSheetContent('Publications', 'A2:F'),
   ]);
   return {
     index: convertDictContent(contents[0]),

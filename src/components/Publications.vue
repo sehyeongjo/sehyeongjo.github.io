@@ -7,24 +7,33 @@
         v-for="publication in publications.slice().reverse()"
         :key="publication.title"
       >
-        <strong>
-          {{ publication.title }}
-        </strong>
-        <br />
-        <vue-markdown 
-          class="is-size-7"
-          :source="emphasizeMe(publication.authors)"
-        ></vue-markdown>
-        <span 
-          class="is-size-7"
-        >
-          <em>{{ publication.booktitle }} ({{ publication.shortBooktitle }})</em>
-        </span>
-        <br />
-        <vue-markdown 
-          class="is-size-7"
-          :source="publication.links"
-        ></vue-markdown>
+        <img
+          v-if="publication.thumbnail"
+          class="thumbnail"
+          :src="publication.thumbnail"
+          :alt="publication.title"
+          loading="lazy"
+        />
+        <div class="info">
+          <strong>
+            {{ publication.title }}
+          </strong>
+          <br />
+          <vue-markdown
+            class="is-size-7"
+            :source="emphasizeMe(publication.authors)"
+          ></vue-markdown>
+          <span
+            class="is-size-7"
+          >
+            <em>{{ publication.booktitle }} ({{ publication.shortBooktitle }})</em>
+          </span>
+          <br />
+          <vue-markdown
+            class="is-size-7"
+            :source="publication.links"
+          ></vue-markdown>
+        </div>
       </li>
     </ul>
   </div>
@@ -51,3 +60,28 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+  .publications ul {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .publication {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+
+  .thumbnail {
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 180px;
+    margin-right: 1rem;
+    border-radius: 4px;
+  }
+
+  .info {
+    min-width: 0;
+  }
+</style>
