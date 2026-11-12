@@ -75,8 +75,8 @@ export default {
 
   .thumbnail {
     flex-shrink: 0;
-    width: 30%;
-    max-width: 180px;
+    width: 25%;
+    max-width: 150px;
     margin-right: 1rem;
     border-radius: 4px;
   }
