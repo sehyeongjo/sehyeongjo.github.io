@@ -1,2 +1,3 @@
-export const googleApiKey = 'AIzaSyDWUJDd0aK4GSCO33ajMxUXDjMGTMl3T_M';
-export const googleSheetDocId = '1qh3terGxExsafSp2eznjhAXMON-5SP9Uy4QjkQd9a_k';
+// Publishable key is meant to be public; access is limited by RLS (see supabase/init.sql).
+export const supabaseUrl = 'https://htmlmkjugyijvynbdnpx.supabase.co';
+export const supabaseKey = 'sb_publishable_ATEA_6WQIXN3ihZyfuTzfQ_DblGCsBU';

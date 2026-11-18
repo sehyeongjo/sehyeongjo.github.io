@@ -1,10 +1,10 @@
 <template>
   <div class="publications">
-    <h2>Publication</h2>
+    <h2>{{ title }}</h2>
     <ul>
       <li
         class="publication"
-        v-for="publication in publications.slice().reverse()"
+        v-for="publication in publications"
         :key="publication.title"
       >
         <img
@@ -44,6 +44,7 @@ import VueMarkdown from 'vue-markdown';
 export default {
   name: 'publications',
   props: [
+    'title',
     'contents',
     'publications',
   ],

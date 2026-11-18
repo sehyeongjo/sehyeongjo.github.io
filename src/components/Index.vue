@@ -9,20 +9,21 @@
     </div>
     <div class="body-column is-padding-vertical-4 content">
       <div class="is-padding-horizontal-2">
-        <div 
-          v-for="sectionId in contents.body"
-          :key="sectionId"
+        <div
+          v-for="section in sections"
+          :key="section.id"
         >
-          <publications 
-            v-if="sectionId === 'publications'"
+          <publications
+            v-if="section.id === 'publications'"
             class="is-padding-bottom-4"
+            :title="section.title"
             :contents="contents"
             :publications="publications"
           ></publications>
           <vue-markdown
             v-else
             class="is-padding-bottom-4"
-            :source="contents[sectionId]"
+            :source="section.markdown"
           ></vue-markdown>
         </div>
         <div class="credit">
@@ -49,6 +50,7 @@ export default {
   props: [
     'loading',
     'contents',
+    'sections',
     'publications',
   ],
   components: {

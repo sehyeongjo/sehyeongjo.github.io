@@ -12,6 +12,7 @@
       v-else
       :loading="loading"
       :contents="contents.index"
+      :sections="contents.sections"
       :publications="contents.publications"
     ></index>
   </div>
