@@ -2,6 +2,9 @@ const path = require('path');
 const pkg = require('./package');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
+// Relative './' is for the GitHub Pages build; the dev server 404s assets with it.
+const publicPath = process.argv.includes('--serve') ? '/' : './';
+
 module.exports = (options, req) => ({
   entry: [
     'src/polyfills.js',
@@ -14,10 +17,10 @@ module.exports = (options, req) => ({
 	  description: pkg.description,
       publicPath: './',
     },
-  	publicUrl: './',
+  	publicUrl: publicPath,
   },
   chainWebpack(config) {
-    config.output.publicPath('./');
+    config.output.publicPath(publicPath);
     // optionally `return config`
 	config
       .plugin('preload-webpack')
